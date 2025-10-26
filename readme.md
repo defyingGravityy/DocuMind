@@ -39,6 +39,10 @@ streamlit run app.py
 
 Then open http://localhost:8501
 
+## 🚀 Live Demo
+
+**Try it here:** [DocuMind - Live App](https://ena7gudf2ueupuqe8dymzz.streamlit.app/)
+
 ## 📝 Project Structure
 ```
 DocuMind/
