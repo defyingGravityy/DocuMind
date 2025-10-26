@@ -2,6 +2,9 @@
 
 An AI-powered document analysis system that enables smart Q&A on PDFs, CSVs, and text files using LangChain and Groq API.
 
+# 🚀 Live Demo
+
+**Try it here:** [DocuMind - Live App](https://ena7gudf2ueupuqe8dymzz.streamlit.app/)
 ## 🚀 Features
 
 - **Document Q&A**: Upload PDF, TXT, DOCX and ask natural language questions
@@ -39,7 +42,7 @@ streamlit run app.py
 
 Then open http://localhost:8501
 
-## 🚀 Live Demo
+# 🚀 Live Demo
 
 **Try it here:** [DocuMind - Live App](https://ena7gudf2ueupuqe8dymzz.streamlit.app/)
 
