@@ -1,44 +1,38 @@
-pipeline {
-    agent any
+node {
 
-    stages {
+    try {
 
         stage('Install Dependencies') {
-            steps {
-                sh '''
+            sh '''
                 python3 -m venv venv
                 . venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
-                '''
-            }
+            '''
         }
 
         stage('Code Validation') {
-            steps {
-                sh '''
+            sh '''
                 . venv/bin/activate
-                python3 -m py_compile *.py || true
-                '''
-            }
+                python3 -m py_compile *.py
+                echo "Validation successful"
+            '''
         }
 
         stage('Deploy Simulation') {
-            steps {
-                sh '''
+            sh '''
                 echo "Packaging application..."
                 tar -czf documind-artifact.tar.gz *
-                '''
-            }
+                echo "Deployment artifact created"
+            '''
         }
-    }
 
-    post {
-        success {
-            echo "Pipeline executed successfully!"
-        }
-        failure {
-            echo "Pipeline failed!"
-        }
+        echo "Pipeline executed successfully!"
+
+    } catch (Exception e) {
+
+        echo "Pipeline failed!"
+        throw e
     }
 }
+
